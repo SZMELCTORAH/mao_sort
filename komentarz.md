@@ -1,69 +1,5 @@
-## User
 
-[@idea.md (1:83)](file:///var/home/marcintora/Pulpit/kod/mao_sort/idea.md#L1:83) [@idea.md (1:83)](file:///var/home/marcintora/Pulpit/kod/mao_sort/idea.md#L1:83) zapoznaj się z mao sortem, przeanalizuj, oceń kompletność czy sensowność całości. wszelkie koncepcje, ulepszenia, pomysły czy kejsy umieść od punktu 3 w punktach w części kejsy. Na końcu jest propozycja kodu w pythonie do mao sortu, niekompletna i wstępna. Nie pisz od razu całego skryptu, po prostu określ na przykładzie tego co jest kierunek i zakres zmian. czy wszysto jest jasne? czy techniki nie wymagają jakiś ulepszeń czy korekt? co jeszcze?
-
-## Assistant
-
-<thinking>
-Użytkownik przedstawił specyfikację algorytmu Mao Sort - satyryczny algorytm sortowania inspirowany polityką Mao Zedonga. Ma pięć technik rewolucyjnych (kolektywizacja, samokrytyka, reedukacja, Wielki Skok, czystka) i cel osiągnięcia listy jednowartościowej.
-
-Przeanalizowałem:
-1. **Filozofię**: Koncepcja jest spójna i zabawna - chaos losowych operacji ma doprowadzić do "równości" (jednowartościowości). Metafora jest trafiła.
-
-2. **Techniki**:
-   - **Kolektywizacja**: Zastępowanie losowego podzbiór średnią. OK, ale zaokrąglenie do int może powodować problemy z dokładnością.
-   - **Samokrytyka**: Zastępowanie losowego elementu medianą. Proste i skuteczne.
-   - **Reedukacja**: Zamiana dwóch losowych elementów. Neutralne, ale pochłania zasoby.
-   - **Wielki Skok**: Zastąpienie całej listy kopiami jednego elementu. Natychmiastowa homogenizacja - świetne.
-   - **Czystka**: Zastępowanie elementów odstających losowymi wartościami. Aktualna implementacja używa mody zamiast średniej/medianowy, co jest niekonsekwencją ze specyfikacją.
-
-3. **Kejsy do rozważenia**:
-   - Losowość: Aktualna implementacja losuje technikę i elementy w każdej iteracji - OK.
-   - Prostość: Kod jest prosty, ale można go ulepszyć.
-   - Problemy:
-     * Czystka: Specyfikacja mówi o czystce względem średniej/medianowy, a kod używa mody.
-     * Wielki Skok: Aktualnie zastępuje CAŁĄ listę, ale specyfikacja mówi o "losowej części listy".
-     * Brak wizualizacji i narracji historycznej.
-     * Brak obsługi pustych list.
-     * Zaokrąglanie średniej do int może być problematyczne.
-
-4. **Pomysły na ulepszenia**:
-   - Dodanie parametrów do kontroli losowości (prawdopodobieństwa technik).
-   - Lepsza obsługa typów (float vs int).
-   - Statystyki i wizualizacja historii.
-   - Możliwość śledzenia postępu.
-   - Lepsza dokumentacja.
-
-5. **Korekty kodu**:
-   - Poprawić czystkę, aby używała średniej/medianowy.
-   - Poprawić Wielki Skok, aby działał na losowej części listy.
-   - Dodać obsługę pustych list.
-   - Rozważyć użycie float zamiast int.
-
-Czy wszystko jest jasne? Tak, koncepcja jest klarowna i zabawna. Czy techniki wymagają ulepszeń? Tak, głównie czystka i Wielki Skok. Co jeszcze? Wizualizacja, statystyki, lepsza obsługa błędów.
-</thinking>
-
-### **Analiza Mao Sort – podsumowanie, ocena i kierunki rozwoju**
-
----
-
----
-
-## **📌 Ocena ogólna**
-**Mao Sort** to **genialna w swojej ironii i traficie metafora** — algorytm, który **teoretycznie** ma doprowadzić do równości (jednowartościowej listy), ale **praktycznie** robi to w sposób **chaotyczny, nieskuteczny i losowy**, co doskonale odzwierciedla realia historyczne (Wielki Skok, Rewolucja Kulturalna).
-**Koncepcja jest spójna, zabawna i filozoficznie głęboka** — łączy absurd polityczny z absurdem algorytmicznym.
-
-**Czy jest kompletna?**
-✅ **Tak, jako idea** – specyfikacja jest klarowna, techniki są zdefiniowane, cel jest jasny.
-⚠️ **Nie do końca, jako implementacja** – kod jest **wstępny i niekompletny** (błędy logiczne, brakujące funkcjonalności, nieścisłości względem specyfikacji).
-
----
-
----
-
----
-
-## **🔍 Analiza technik rewolucyjnych**
+## Analiza technik rewolucyjnych
 ### **1. Kolektywizacja**
 - **Specyfikacja**: Zastąp losowy podzbiór elementów **średnią arytmetyczną** (zaokrągloną).
 - **Kod**:
@@ -72,10 +8,10 @@ Czy wszystko jest jasne? Tak, koncepcja jest klarowna i zabawna. Czy techniki wy
   indices = random.sample(range(len(lst)), k=random.randint(1, len(lst)))  # OK
   ```
 - **Uwagi**:
-  - ✅ **Zgodne z ideą** – losowy podzbiór, średnia.
-  - ⚠️ **Problem**: `int()` obcina ułamek (nie zaokrągla). Lepiej: `round(sum(lst) / len(lst))`.
-  - ⚠️ **Problem**: Jeśli lista zawiera **floaty**, `int()` zniszczy precyzję. Rozwiązanie: pozwolić na floaty lub jawnie zadeklarować, że Mao Sort działa tylko na **całkowitych ideologiach** (int).
-  - 💡 **Pomysł**: Można dodać opcję **ważonej średniej** (np. z losowymi wagami, by jeszcze bardziej zakłócić równość).
+  -  **Zgodne z ideą** – losowy podzbiór, średnia.
+  -  **Problem**: `int()` obcina ułamek (nie zaokrągla). Lepiej: `round(sum(lst) / len(lst))`.
+  -  **Problem**: Jeśli lista zawiera **floaty**, `int()` zniszczy precyzję. Rozwiązanie: pozwolić na floaty lub jawnie zadeklarować, że Mao Sort działa tylko na **całkowitych ideologiach** (int).
+  - **Pomysł**: Można dodać opcję **ważonej średniej** (np. z losowymi wagami, by jeszcze bardziej zakłócić równość).
 
 ---
 
@@ -88,9 +24,9 @@ Czy wszystko jest jasne? Tak, koncepcja jest klarowna i zabawna. Czy techniki wy
   lst[i] = med
   ```
 - **Uwagi**:
-  - ✅ **Zgodne z ideą** – proste i skuteczne.
-  - ⚠️ **Problem**: `int(median(lst))` – ten sam co wyżej (float → int).
-  - 💡 **Pomysł**: Można zrobić **"głęboką samokrytykę"** – zastąpić **wszystkie elementy mniejsze od mediany** medianą (by "podciągnąć" listę do średniego poziomu).
+  -  **Zgodne z ideą** – proste i skuteczne.
+  -  **Problem**: `int(median(lst))` – ten sam co wyżej (float → int).
+  - **Pomysł**: Można zrobić **"głęboką samokrytykę"** – zastąpić **wszystkie elementy mniejsze od mediany** medianą (by "podciągnąć" listę do średniego poziomu).
 
 ---
 
@@ -102,9 +38,9 @@ Czy wszystko jest jasne? Tak, koncepcja jest klarowna i zabawna. Czy techniki wy
   lst[i], lst[j] = lst[j], lst[i]  # OK
   ```
 - **Uwagi**:
-  - ✅ **Zgodne z ideą** – prostota i bezcelowość.
-  - ⚠️ **Problem**: Jeśli lista ma **1 element**, `random.sample(range(1), 2)` rzuci **ValueError**.
-  - 💡 **Pomysł**:
+  -  **Zgodne z ideą** – prostota i bezcelowość.
+  -  **Problem**: Jeśli lista ma **1 element**, `random.sample(range(1), 2)` rzuci **ValueError**.
+  - **Pomysł**:
     - **"Reedukacja masowa"** – zamienić **losową liczbę par** (np. `k` losowych swapów w jednej iteracji).
     - **"Reedukacja ideologiczna"** – zamienić **elementy o największej różnicy** (by "zmniejszać nierówności").
 
@@ -119,15 +55,15 @@ Czy wszystko jest jasne? Tak, koncepcja jest klarowna i zabawna. Czy techniki wy
   ```
 - **Uwagi**:
   - ❌ **Błąd**: Kod **zastępuje CAŁĄ listę** jednym elementem, a specyfikacja mówi o **losowej części listy**.
-  - ✅ **Funkcjonalność**: Jeśli chcemy **natychmiastowej homogenizacji**, to OK, ale **niezgodne z opisem**.
-  - 💡 **Poprawka**:
+  -  **Funkcjonalność**: Jeśli chcemy **natychmiastowej homogenizacji**, to OK, ale **niezgodne z opisem**.
+  - **Poprawka**:
     ```python
     chosen = random.choice(lst)
     indices = random.sample(range(len(lst)), k=random.randint(1, len(lst)))
     for i in indices:
         lst[i] = chosen
     ```
-  - 💡 **Pomysł**:
+  - **Pomysł**:
     - **"Wielki Skok z pomyłką"** – zastąpić losową część listy **losową wartością z zakresu [min, max]**, a nie koniecznie istniejącym elementem.
 
 ---
@@ -145,8 +81,8 @@ Czy wszystko jest jasne? Tak, koncepcja jest klarowna i zabawna. Czy techniki wy
 - **Uwagi**:
   - ❌ **Błąd krytyczny**: Kod używa **mody** (najczęstszej wartości), a specyfikacja mówi o **średniej/medanie**.
   - ❌ **Błąd logiczny**: `random.randint(min(lst), max(lst))` losuje z **całego zakresu**, a nie z **podzbioru niepoddanego czystce** (jak w przykładzie: `[1,2,4]`).
-  - ✅ **Intencja**: Dobra – losowe zastępowanie elementów odstających.
-  - 💡 **Poprawka**:
+  -  **Intencja**: Dobra – losowe zastępowanie elementów odstających.
+  - **Poprawka**:
     ```python
     threshold = median(lst)  # lub mean(lst)
     lower_half = [x for x in lst if x <= threshold]
@@ -157,7 +93,7 @@ Czy wszystko jest jasne? Tak, koncepcja jest klarowna i zabawna. Czy techniki wy
         new_vals = [random.choice(upper_half) if x < threshold else x for x in lst]
     lst = new_vals
     ```
-  - 💡 **Pomysł**:
+  - **Pomysł**:
     - **"Czystka klasowa"** – podzielić listę na **2 klasy** (np. `<= median` i `> median`), a następnie **wymienić losowo elementy między klasami** (by "zrównoważyć" społecznie).
     - **"Czystka losowa"** – zamiast progu (median/mean), użyć **losowy próg** (np. `random.uniform(min(lst), max(lst))`).
 
@@ -185,7 +121,7 @@ Czy wszystko jest jasne? Tak, koncepcja jest klarowna i zabawna. Czy techniki wy
 
 ---
 
-## **🎯 Kejsy (od punktu 3)**
+## **Kejsy (od punktu 3)**
 ### **3. Poprawki technik (priorytet: wysoki)**
 - [ ] **Czystka**: Zmienić logikę, by używała **median/mean** (nie mody) i losowała z **podzbioru niepoddanego czystce** (a nie całego zakresu).
 - [ ] **Wielki Skok**: Zmienić, by zastępowała **losową część listy** (nie całą).
@@ -298,14 +234,14 @@ Czy wszystko jest jasne? Tak, koncepcja jest klarowna i zabawna. Czy techniki wy
 ---
 ---
 ## **❓ Czy wszystko jest jasne?**
-✅ **Tak**.
+ **Tak**.
 - **Idea**: Krytalicznie czysta – absurdalny, ale spójny algorytm.
 - **Techniki**: Zdefiniowane dobrze, ale **kod nie zawsze odpowiada specyfikacji** (główne błędy to **czystka** i **Wielki Skok**).
 - **Cel**: Jasny – **chaotyczna homogenizacja**.
 
 ---
 ## **❓ Czy techniki wymagają ulepszeń/korekt?**
-✅ **Tak, głównie:**
+ **Tak, głównie:**
 1. **Czystka** → **zmienić na median/mean + losowanie z podzbioru**.
 2. **Wielki Skok** → **zastępować losową część listy, nie całą**.
 3. **Kolektywizacja/Samokrytyka** → **użyć `round()` zamiast `int()`**.
@@ -324,54 +260,7 @@ Czy wszystko jest jasne? Tak, koncepcja jest klarowna i zabawna. Czy techniki wy
    - Parametryzacja losowości.
    - Porównanie z innymi "ideologicznymi" algorytmami.
 
----
----
----
-## **🎯 Podsumowanie: Co robić dalej?**
-1. **Najpierw naprawić błędy** (czystka, Wielki Skok, typy).
-2. **Dodać minimalne statystyki** (licznik iteracji, historia technik).
-3. **Napisać testy** (sprawdzić poprawność technik).
-4. **Opcjonalnie**: Dodać **wizualizację**, **nowe techniki**, **parametryzację**.
 
-**Czy chcesz, bym rozpisał któryś z tych punktów w postaci kodu (np. poprawioną wersję `mao_sort`)?** Albo może **stworzyć plan implementacji** (np. z podziałem na etapy)?
-
-## User
-
-1 ok 2 ok 3 jest juz w tekscie, zobacz, ale tak 4 tak 5 licznik iteracji ma być gołą liczbą. historia to może być po prostu "poprzednio użyta technika:" 6? ok 7. ok? 8 tak DALEJ co do zmiaj poprawi tak, rozszerzenia technik tak, testowanie tak, filozofia nie, optymalizacja nie, dokumentacja -- na koniec, już po stworzeniu gotowego skryptu w pythonie. Dokumentacja musi być porządna i zwarta, tak aby można było się dowiedzieć wszystkie z readme. Znowu nie pisz całego skryptu i kodu, raczej proponuj konkretne rozwiąznia i funkcje. Resztę zanotuj
-
-## User
-
-ok 2 ok 3 jest juz w tekscie, zobacz, ale tak 4 tak 5 licznik iteracji ma być gołą liczbą. historia to może być po prostu "poprzednio użyta technika:" 6? ok 7. ok? 8 tak DALEJ co do zmiaj poprawi tak, rozszerzenia technik tak, testowanie tak, filozofia nie, optymalizacja nie, dokumentacja -- na koniec, już po stworzeniu gotowego skryptu w pythonie. Dokumentacja musi być porządna i zwarta, tak aby można było się dowiedzieć wszystkie z readme. Znowu nie pisz całego skryptu i kodu, raczej proponuj konkretne rozwiąznia i funkcje. Resztę zanotuj
-
-## Assistant
-
-### **📋 Podsumowanie ustaleń i plan działań dla Mao Sort**
-
----
-
----
-
-## **✅ Potwierdzone ustalenia**
-1. **Poprawki błędów w technikach** → **TAK** (priorytet wysoki)
-2. **Rozszerzenia technik (parametryzacja, statystyki)** → **TAK** (priorytet średni)
-3. **Kejsy (pytania i pomysły)** → **Już w tekście** (zostawiamy jako inspirację, nie implementujemy od razu)
-4. **Testowanie** → **TAK** (priorytet wysoki)
-5. **Licznik iteracji** → **Goła liczba** (np. `iterations: 42`)
-6. **Historia technik** → **Tylko ostatnia użyta technika** (np. `"poprzednio użyta technika: czystka"`)
-7. **Optymalizacje** → **NIE** (na razie niepotrzebne)
-8. **Dokumentacja** → **TAK, ale na końcu** (po gotowym skrypcie, zwarta i wyczerpująca w README)
-9. **Filozoficzne ulepszenia** → **NIE** (na razie pomijamy)
-10. **Wizualizacja** → **NIE** (na razie pomijamy, ale można dodać później)
-
----
-
----
-
----
-
-## **🔧 Propozycje konkretnych rozwiązań i funkcji**
-
----
 
 ### **1. Poprawki błędów w technikach (priorytet: ⭐⭐⭐⭐⭐)**
 #### **🔹 Czystka**
