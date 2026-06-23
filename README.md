@@ -2,7 +2,7 @@
 
 > *"W komunizmie wszystkie zmienne są równe"*
 
-**Mao Sort** to satyryczny algorytm sortowania inspirowany polityką Mao Zedonga. Zamiast dążyć do posortowania listy w tradycyjnym sensie, Mao Sort stara się osiągnąć **ideologiczną jedność** — listę złożoną z *n* kopii tej samej wartości. Cel jest jasny, ale metody są chaotyczne, losowe i często nieskuteczne — doskonała metafora Wielkiego Skoku i Rewolucji Kulturalnej.
+**Mao Sort** to algorytm sortujący inspirowany polityką Mao Zedonga. Zamiast dążyć do posortowania listy w tradycyjnym sensie, Mao Sort stara się osiągnąć **ideologiczną jedność** — listę złożoną z *n* kopii tej samej wartości. Cel jest jasny, ale metody są chaotyczne, losowe i często nieskuteczne — doskonała metafora Wielkiego Skoku i Rewolucji Kulturalnej.
 
 ---
 
@@ -15,7 +15,6 @@
 - [Parametry](#-parametry)
 - [Przykłady](#-przykłady)
 - [Testowanie](#-testowanie)
-- [Filozoficzne Podsumowanie](#-filozoficzne-podsumowanie)
 - [Licencja](#-licencja)
 
 ---
@@ -23,12 +22,12 @@
 ## 🎯 Filozofia
 
 ### Cel
-Ostatecznym sukcesem Mao Sort jest **lista jednowartościowa** — wszystkie elementy równe. To symbolizuje ideologiczną jedność, do której dążył Mao Zedong w Chinach.
+Ostatecznym sukcesem Mao Sort jest **lista jednowartościowa** — wszystkie elementy równe. To symbolizuje ideologiczną jedność, do której dążył wysiłek rewolucyjny.
 
 ### Metoda
 Algorytm **nie stosuje deterministycznych metod sortowania**. Zamiast tego, w każdej iteracji **losowo wybiera jedną z 5 technik rewolucyjnych**, z których każda w różny sposób niszczy strukturę listy, dążąc (lub nie) do homogenizacji.
 
-> **"Cel ideologicznie spójny (lista jednorodna, wszyscy równi) osiągany metodami losowo destrukcyjnymi albo nieskutecznymi. To jest właściwie bardzo wierna metafora Wielkiego Skoku i Rewolucji Kulturalnej — kierunek był określony, metody były chaotyczne i katastrofalne, wynik był przewidywalny tylko w tym sensie, że zawsze był zły."**
+> **"Cel ideologicznie spójny (lista jednorodna, wszyscy równi) osiągany metodami losowo destrukcyjnymi albo nieskutecznymi. To wierna metafora Wielkiego Skoku i Rewolucji Kulturalnej — kierunek był określony, metody były chaotyczne i katastrofalne, wynik był przewidywalny tylko w tym sensie, że zawsze był zły."**
 
 ### Złożoność
 - **Niedefiniowalna** w klasycznym sensie (zależy od losowości)
@@ -41,29 +40,28 @@ Algorytm **nie stosuje deterministycznych metod sortowania**. Zamiast tego, w ka
 
 Mao Sort używa 5 technik, z których każda symuluje inny aspekt polityki Mao:
 
-### 1. 🏭 Kolektywizacja
+### 1. Kolektywizacja
 **"Zjednoczenie środków produkcji"**
 
 - **Działanie**: Zastąp losowy podzbiór elementów ich **średnią arytmetyczną (zaokrągloną)**
 - **Przykład**: `[1, 2, 4, 6, 8, 10]` → średnia = 5 → `[1, 2, 5, 5, 8, 10]` (losowe 2 elementy zastąpione 5)
-- **Metafora**: Kolektywizacja rolnictwa — średnia wydajność dla wszystkich
+- **Metafora**: Kolektywizacja rolnictwa
 
-### 2. 🎭 Samokrytyka
+### 2. Samokrytyka
 **"Przyznanie się do błędów i poprawa"**
 
 - **Działanie**: Zastąp **losowy element** **medianą listy**
 - **Przykład**: `[1, 2, 4, 6, 8, 10]` → mediana = 5 → `[1, 5, 4, 6, 8, 10]`
-- **Metafora**: Publiczne przyznanie się do błędów i dostosowanie do linii partyjnej
 
-### 3. 🎓 Reedukacja
+### 3. Reedukacja
 **"Przeszkolenie ideologiczne"**
 
 - **Działanie**: Zamień **losowe 2 elementy** miejscami
 - **Przykład**: `[1, 2, 4, 6, 8, 10]` → `[4, 2, 1, 6, 8, 10]`
-- **Metafora**: Przeszkolenie kadry — wymiana ludzi, ale bez realnej zmiany systemu
+- **Metafora**: Przeszkolenie kadry — wymiana ludzi, bez realnej zmiany systemu
 - **Cechy**: Operacja **neutralna ideologicznie**, ale pochłaniająca zasoby
 
-### 4. 🚀 Wielki Skok
+### 4. Wielki Skok
 **"Przyspieszona modernizacja"**
 
 - **Działanie**: Zastąp **losową część listy** kopiami **losowo wybranego elementu**
@@ -71,12 +69,12 @@ Mao Sort używa 5 technik, z których każda symuluje inny aspekt polityki Mao:
 - **Metafora**: Wielki Skok Naprzód — gwałtowne zmiany, które mogą doprowadzić do sukcesu lub katastrofy
 - **Uwaga**: **Może jednym skokiem osiągnąć cel** (jeśli zastąpi całą listę) lub **całkowicie zniszczyć postęp**
 
-### 5. ⚔️ Czystka
+### 5. Czystka
 **"Eliminacja elementów kontrrewolucyjnych"**
 
 - **Działanie**: Zastąp elementy **odstające** (w górę lub w dół od mediany) **losowymi wartościami z przeciwnej połowy**
 - **Przykład**: `[1, 2, 4, 6, 8, 10]` → mediana = 5 → elementy >5 (`6,8,10`) zastąpione losowymi wartościami z `[1,2,4]` → `[1, 2, 4, 1, 2, 4]`
-- **Metafora**: Czystki polityczne — eliminacja "wrogów ludu"
+- **Metafora**: eliminacja "wrogów ludu"
 - **Kierunki**:
   - `'up'`: Czystka elementów **większych od mediany** (zastępowanie wartościami z dolnej połowy)
   - `'down'`: Czystka elementów **mniejszych od mediany** (zastępowanie wartościami z górnej połowy)
@@ -109,7 +107,7 @@ pip install pytest
 
 ---
 
-## 🚀 Użycie
+## Użycie
 
 ### Podstawowe użycie
 ```python
@@ -213,8 +211,6 @@ mao_sort([1.5, 2.5, 3.5])  # {'result': [2.5, 2.5, 2.5], 'iterations': 10, 'last
 
 ---
 
-## 🧪 Testowanie
-
 Projekt zawiera **testy jednostkowe** dla wszystkich technik i głównej funkcji.
 
 ### Uruchomienie testów
@@ -242,30 +238,6 @@ pytest test_mao_sort.py -v -m "slow"
 
 ---
 
-## 🎭 Filozoficzne Podsumowanie
-
-Mao Sort to **satyryczna krytyka** podejścia do zarządzania i reform społecznych:
-
-1. **Cel jest szlachetny**: Równość, jedność, homogenizacja
-2. **Metody są chaotyczne**: Losowe, niespójne, często szkodliwe
-3. **Wynik jest nieprzewidywalny**: Czasem sukces (przypadkowa jednowartościowość), czasem porażka (nieskończona pętla)
-4. **Koszt jest wysoki**: Każda iteracja to marnotrawstwo zasobów
-
-> **"MAO SORT W TEORII MA 5 METODAMI SZYBKO OSIĄGAĆ RÓWNOŚĆ. W PRAKTYCE JEDNAK DZIAŁANIA TAK SAMO PRZYBLIŻAJĄ JAK I ODDALAJĄ CEL."**
-
-### Analogia historyczna
-| Element algorytmu | Analogia historyczna |
-|-------------------|----------------------|
-| Cel (jednowartościowość) | Społeczeństwo klasowe → społeczeństwo bezklasowe |
-| Kolektywizacja | Kolektywizacja rolnictwa |
-| Samokrytyka | Kampanie samokrytyki |
-| Reedukacja | Przeszkolenie ideologiczne |
-| Wielki Skok | Wielki Skok Naprzód |
-| Czystka | Czystki polityczne |
-| Losowość | Chaos i brak planu |
-| Nieskończona pętla | Stagnacja i brak postępu |
-
----
 
 ## 📜 Licencja
 
@@ -297,12 +269,8 @@ SOFTWARE.
 
 ---
 
-## 📬 Kontakt
-
-Jeśli masz pytania, pomysły na ulepszenia lub chcesz podzielić się swoimi doświadczeniami z Mao Sort, **nie wahaj się skontaktować**!
-
-> **"Rewolucja to nie obiad, nie jest dziełem jednego człowieka. Rewolucja to działanie mas.**"
-> — Mao Zedong (prawdopodobnie nie o algorytmach sortowania)
+> **"Niech zakwitnie sto kwiatów, niech rywalizują ze sobą różne szkoły myślenia. **"
+> Mao Zedong o algorytmach sortujących
 
 ---
 
